@@ -1,0 +1,33 @@
+syntax = "proto3";
+
+package protoTrees;
+
+service TreeService {
+    rpc getTrees (TreeRequest) returns (TreeList) {}
+}
+
+message TreeRequest {
+    optional int32 n = 1;
+}
+
+message TreeList {
+    repeated Tree data = 1;
+}
+
+message Tree {
+    optional int32 id = 1;
+    optional double latitude = 2;
+    optional double longitude = 3;
+    optional string Soortnaam_NL = 4;
+    optional string Soortnaam_WTS = 5;
+    optional string Boomtype = 6;
+    optional string Boomhoogte = 7;
+    optional int32 Plantjaar = 8;
+    optional string Eigenaar = 9;
+    optional string Beheerder = 10;
+    optional string Categorie = 11;
+    optional int32 Boomnummer = 12;
+    optional string SOORT_KORT = 13;
+    optional string SDVIEW = 14;
+    optional int32 RADIUS = 15;
+}
